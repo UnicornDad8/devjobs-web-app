@@ -27,7 +27,7 @@ const App = () => {
   return (
     <>
       <BackgroundSVG />
-      <header>
+      <header className="bg-blue-400">
         <Logo />
         <Toggle activeTheme={theme} onChangeTheme={changeThemeHandler} />
       </header>
