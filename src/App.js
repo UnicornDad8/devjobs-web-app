@@ -27,7 +27,7 @@ const App = () => {
   return (
     <>
       <BackgroundSVG />
-      <header className="bg-blue-400">
+      <header className="relative flex justify-between items-center h-[12.2rem]">
         <Logo />
         <Toggle activeTheme={theme} onChangeTheme={changeThemeHandler} />
       </header>

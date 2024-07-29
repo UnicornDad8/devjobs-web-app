@@ -15,8 +15,32 @@
   --color-grey: #9daec2;
   --color-dark-grey: #6e8098;
 
+  --font-size-h1: 2.8rem;
+  --line-height-h1: 3.4rem;
+  --font-size-h2: 2.4rem;
+  --line-height-h2: 2.9rem;
+  --font-size-h3: 2rem;
+  --line-height-h3: 2.4rem;
+  --font-size-h4: 1.4rem;
+  --line-height-h4: 1.8rem;
   --font-size-body: 1.6rem;
   --line-height-body: 2.6rem;
+
+  --border-radius-xxs: 0.3rem;
+  --border-radius-xs: 0.5rem;
+  --border-radius-s: 0.6rem;
+  --border-radius-m: 1.2rem;
+  --border-radius-l: 1.5rem;
+  --border-radius-xl: 10rem;
+
+  --padding-layout: 0 10%;
+  --padding-search-bar-items: 2rem 3.2rem;
+}
+
+@media (max-width: 75em) {
+  :root {
+    --padding-layout: 0 5%;
+  }
 }
 
 *,
@@ -74,5 +98,87 @@ body {
 @media (max-width: 48.12em) {
   .back-svg-image {
     background-image: url("./assets/mobile/bg-pattern-header.svg");
+  }
+}
+
+/* --------- Tags Styles --------- */
+
+header {
+  padding: var(--padding-layout);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-text);
+  transition: 0.2s linear;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
+  color: var(--color-violet);
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  background-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ------- Toggle Button ------- */
+.toggle-button::before {
+  content: "";
+  display: inline-block;
+  width: 1.4rem;
+  height: 1.4rem;
+  background-color: var(--color-violet);
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0.5rem;
+  transition: 0.2s linear;
+}
+
+.toggle-button[data-active-theme="light"]::before {
+  transform: translateY(-50%) translateX(0);
+}
+
+.toggle-button[data-active-theme="dark"]::before {
+  transform: translateY(-50%) translateX(165%);
+}
+
+@media (hover: hover) {
+  .toggle-button:hover::before {
+    background-color: var(--color-light-violet);
   }
 }
