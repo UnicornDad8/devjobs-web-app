@@ -53,8 +53,8 @@ const SearchBar = () => {
   };
 
   return (
-    <form onSubmit={submitSearchHandler}>
-      <section>
+    <form onSubmit={submitSearchHandler} className="relative w-full">
+      <section className="w-full flex justify-between items-center search-bar-bg rounded-[0.6rem] pr-[1.6rem] duration-200 ease-linear">
         <Input
           onChange={changeInputInfosHandler}
           id="filterByInfos"

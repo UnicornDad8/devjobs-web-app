@@ -186,3 +186,8 @@ a {
     background-color: var(--color-light-violet);
   }
 }
+
+/* -------- Search Bar --------*/
+.search-bar-bg {
+  background-color: var(--background-color-elements);
+}
