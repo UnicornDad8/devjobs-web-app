@@ -2,6 +2,8 @@
 
 This is a solution to the [Devjobs web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/devjobs-web-app-HuvC_LP4l). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
+![screenshot app](./screenshot.png)
+
 ## Table of contents
 
 - [The challenge](#the-challenge)
