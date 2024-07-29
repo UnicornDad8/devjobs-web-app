@@ -2,6 +2,7 @@ import { useContext, useRef, useState } from "react";
 import Button from "../UI/Button";
 import Checkbox from "../UI/Checkbox";
 import Input from "../UI/Input";
+import styles from "./SearchBar.module.css";
 import { JobsContext } from "../../store/JobsContextProvider";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -53,8 +54,8 @@ const SearchBar = () => {
   };
 
   return (
-    <form onSubmit={submitSearchHandler} className="relative w-full">
-      <section className="w-full flex justify-between items-center search-bar-bg rounded-[0.6rem] pr-[1.6rem] duration-200 ease-linear search-bar">
+    <form className={styles.searchBarContainer} onSubmit={submitSearchHandler}>
+      <section className={styles.searchBar}>
         <Input
           onChange={changeInputInfosHandler}
           id="filterByInfos"
@@ -93,6 +94,7 @@ const SearchBar = () => {
             <>
               <Backdrop exit={{ opacity: 0 }} />
               <motion.div
+                className={styles.searchBarMoreInfos}
                 initial={{
                   opacity: 0,
                   y: "-10%",
@@ -105,7 +107,6 @@ const SearchBar = () => {
                   transition: { delay: 0.2 },
                 }}
                 exit={{ opacity: 0, transition: { delay: 0 } }}
-                className="flex flex-col items-stretch gap-[1rem] fixed top-[50%] left-[50%] w-[calc(100% - 10%)] z-30 -translate-x-2/4 -translate-y-2/4 rounded-[0.6rem] search-bar-more-infos"
               >
                 <Input
                   onChange={changeInputLocationHandler}

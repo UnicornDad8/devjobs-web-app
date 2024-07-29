@@ -1,8 +1,9 @@
-import searchIconSrc from "../../assets/desktop/icon-search.svg";
-import locationIconSrc from "../../assets/desktop/icon-location.svg";
+import searchIconSrc from '../../assets/desktop/icon-search.svg';
+import locationIconSrc from '../../assets/desktop/icon-location.svg';
 
-import { forwardRef } from "react";
-import useResponsiveText from "../../hooks/useResponsiveText";
+import styles from './Input.module.css';
+import { forwardRef } from 'react';
+import useResponsiveText from '../../hooks/useResponsiveText';
 
 const Input = forwardRef((props, ref) => {
   const placeholder = useResponsiveText(
@@ -12,23 +13,23 @@ const Input = forwardRef((props, ref) => {
 
   return (
     <label
-      htmlFor={props.id}
-      className={`"relative flex items-center gap-[1rem] input-label min-w-[20rem]" ${
-        props.hideOnMobile ? "hide-on-mobile" : ""
+      className={`${styles.inputLabel} ${
+        props.hideOnMobile ? 'hideOnMobile' : ''
       }`}
+      htmlFor={props.id}
     >
       <img
-        src={props.id === "filterByInfos" ? searchIconSrc : locationIconSrc}
+        src={props.id === 'filterByInfos' ? searchIconSrc : locationIconSrc}
         alt={`${props.id} icon`}
       />
       <input
         onChange={props.onChange}
+        className={styles.inputField}
         id={props.id}
-        type="text"
+        type='text'
         placeholder={placeholder}
         ref={ref}
         value={props.value}
-        className="grow input-field p-[1rem] rounded-[0.5rem] overflow-hidden"
       />
     </label>
   );

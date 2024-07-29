@@ -1,10 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap");
-
-/* -------- Base Styles --------- */
 :root {
   --color-violet: #5964e0;
   --color-light-violet: #939bf4;
@@ -14,7 +9,6 @@
   --color-light-grey: #f4f6f8;
   --color-grey: #9daec2;
   --color-dark-grey: #6e8098;
-
   --font-size-h1: 2.8rem;
   --line-height-h1: 3.4rem;
   --font-size-h2: 2.4rem;
@@ -25,22 +19,14 @@
   --line-height-h4: 1.8rem;
   --font-size-body: 1.6rem;
   --line-height-body: 2.6rem;
-
   --border-radius-xxs: 0.3rem;
   --border-radius-xs: 0.5rem;
   --border-radius-s: 0.6rem;
   --border-radius-m: 1.2rem;
   --border-radius-l: 1.5rem;
   --border-radius-xl: 10rem;
-
   --padding-layout: 0 10%;
   --padding-search-bar-items: 2rem 3.2rem;
-}
-
-@media (max-width: 75em) {
-  :root {
-    --padding-layout: 0 5%;
-  }
 }
 
 *,
@@ -57,7 +43,7 @@ html {
 }
 
 body {
-  font-family: "Kumbh Sans", sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   font-size: var(--font-size-body);
   line-height: var(--line-height-body);
   color: var(--color-dark-grey);
@@ -70,7 +56,7 @@ body {
   transition: 0.2s linear;
 }
 
-#root[data-theme="light"] {
+#root[data-theme='light'] {
   --background-color-app: var(--color-light-grey);
   --background-color-elements: var(--color-white);
   --color-text: var(--color-very-dark-blue);
@@ -80,7 +66,7 @@ body {
   --color-btn-2: var(--color-violet);
 }
 
-#root[data-theme="dark"] {
+#root[data-theme='dark'] {
   --background-color-app: var(--color-midnight);
   --background-color-elements: var(--color-very-dark-blue);
   --color-text: var(--color-white);
@@ -90,24 +76,28 @@ body {
   --color-btn-2: var(--color-white);
 }
 
-/* ----- Background SVG ----- */
-.back-svg-image {
-  background-image: url("./assets/desktop/bg-pattern-header.svg");
-}
-
-@media (max-width: 48.12em) {
-  .back-svg-image {
-    background-image: url("./assets/mobile/bg-pattern-header.svg");
-  }
-}
-
-/* --------- Tags Styles --------- */
-
 header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 12.2rem;
   padding: var(--padding-layout);
 }
 
 main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10rem;
+  padding: var(--padding-layout);
+}
+
+footer {
+  width: 100%;
+  background-color: var(--background-color-elements);
+  transition: 0.2s linear;
   padding: var(--padding-layout);
 }
 
@@ -159,7 +149,7 @@ a {
   text-decoration: none;
 }
 
-.show-only-on-mobile {
+.showOnlyOnMobile {
   display: none;
 }
 
@@ -176,191 +166,11 @@ a {
     --border-radius-xl: 0;
   }
 
-  .hide-on-mobile {
+  .hideOnMobile {
     display: none;
   }
 
-  .show-only-on-mobile {
+  .showOnlyOnMobile {
     display: block;
   }
-}
-
-/* ------- Toggle Button ------- */
-.toggle-button::before {
-  content: "";
-  display: inline-block;
-  width: 1.4rem;
-  height: 1.4rem;
-  background-color: var(--color-violet);
-  border-radius: 100%;
-  position: absolute;
-  top: 50%;
-  left: 0.5rem;
-  transition: 0.2s linear;
-}
-
-.toggle-button[data-active-theme="light"]::before {
-  transform: translateY(-50%) translateX(0);
-}
-
-.toggle-button[data-active-theme="dark"]::before {
-  transform: translateY(-50%) translateX(165%);
-}
-
-@media (hover: hover) {
-  .toggle-button:hover::before {
-    background-color: var(--color-light-violet);
-  }
-}
-
-/* -------- Search Bar --------*/
-.search-bar-bg {
-  background-color: var(--background-color-elements);
-}
-
-.search-bar-more-infos {
-  background-color: var(--background-color-elements);
-}
-
-@media (max-width: 75em) {
-  .search-bar > *,
-  .search-bar-more-infos > * {
-    flex-shrink: 1;
-  }
-}
-
-@media (max-width: 48.12em) {
-  .search-bar {
-    padding: 1.2rem;
-    gap: 0.6rem;
-  }
-
-  .search-bar > label:first-child::after {
-    display: none;
-  }
-
-  .search-bar > label:first-child img {
-    display: none;
-  }
-}
-
-.search-bar-more-infos label:first-child::after {
-  content: "";
-  position: absolute;
-  top: auto;
-  bottom: 0;
-  left: 0;
-  height: 0.1rem;
-  width: 100%;
-  background-color: var(--color-dark-grey);
-  opacity: 0.2;
-}
-
-.search-bar-more-infos label {
-  padding: var(--padding-search-bar-items);
-}
-
-.search-bar-more-infos div {
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-  padding: 0 var(--padding-search-bar-items) var(--padding-search-bar-items);
-}
-
-.search-bar-items {
-  padding: var(--padding-search-bar-items);
-  font-size: var(--font-size-body);
-  color: var(--color-text);
-}
-
-/* ---- Button UI ---- */
-.button-font {
-  font-size: var(--font-size-body);
-}
-
-.button-primary {
-  background-color: var(--color-violet);
-}
-
-.button-secondary {
-  color: var(--color-btn-2);
-  background-color: var(--background-color-btn-2);
-}
-
-@media (hover: hover) {
-  .button-primary:hover {
-    background-color: var(--color-light-violet);
-  }
-
-  .button-secondary:hover {
-    background-color: var(--background-color-btn-2-hover);
-  }
-}
-
-/* ---- Input UI ---- */
-.input-label {
-  padding: var(--padding-search-bar-items);
-}
-
-.input-label[for="filterByInfos"] {
-  flex-grow: 3;
-}
-
-.input-label[for="filterByLocation"] {
-  flex-grow: 1;
-}
-
-.input-label::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0.1rem;
-  height: 100%;
-  background-color: var(--color-dark-grey);
-  opacity: 0.2;
-}
-
-@media (max-width: 48.12em) {
-  .input-label {
-    padding: 0;
-    min-width: 12rem;
-  }
-}
-
-.input-field {
-  font-size: var(--font-size-body);
-  color: var(--color-text);
-}
-
-.input-field::placeholder {
-  color: #8c8f96;
-}
-
-/* ---- Checkbox UI ----*/
-.checkbox-custom-input:active,
-.checkbox-label:active .checkbox-custom-input {
-  transform: scale(0.8);
-}
-
-.bg-checkbox {
-  background-color: var(--color-checkbox);
-}
-
-.checkbox-default-input:checked ~ .checkbox-custom-input {
-  background-color: var(--color-violet);
-  border-radius: var(--border-radius-xxs);
-}
-
-.checkbox-default-input:checked ~ .checkbox-custom-input::after {
-  content: "";
-  display: block;
-  width: 1.2rem;
-  height: 0.6rem;
-  border-left: 0.2rem solid var(--color-white);
-  border-bottom: 0.2rem solid var(--color-white);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -80%) rotate(-45deg);
 }

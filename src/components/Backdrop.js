@@ -1,3 +1,4 @@
+import styles from "./Backdrop.module.css";
 import { motion } from "framer-motion";
 
 const Backdrop = (props) => {
@@ -6,6 +7,7 @@ const Backdrop = (props) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={props.exit}
+      className={styles.backdrop}
     ></motion.div>
   );
 };

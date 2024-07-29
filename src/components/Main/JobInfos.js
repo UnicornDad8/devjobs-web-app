@@ -1,8 +1,10 @@
+import styles from './JobInfos.module.css';
+
 const JobInfos = (props) => {
   return (
-    <div>
+    <div className={styles.jobInfos}>
       <p>{props.postedAt}</p>
-      <span></span>
+      <span className={styles.jobInfosDivider}></span>
       <p>{props.contract}</p>
     </div>
   );

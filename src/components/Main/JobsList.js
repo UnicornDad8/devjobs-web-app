@@ -6,6 +6,8 @@ import { JobsContext } from "../../store/JobsContextProvider";
 import includesText from "../../helpers/includesText";
 import { motion } from "framer-motion";
 
+import styles from "./JobsList.module.css";
+
 const containerVariants = {
   hidden: {
     opacity: 0,
@@ -76,6 +78,7 @@ const JobsList = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
+        className={styles.jobsGrid}
       >
         {filteredJobsData.map(
           (jobData, index) =>

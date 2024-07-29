@@ -15,7 +15,6 @@ const HomePage = () => {
         opacity: 0,
       }}
       transition={{ ease: "easeInOut" }}
-      className="relative flex flex-col items-center mb-[10rem]"
     >
       <SearchBar />
       <JobsList />

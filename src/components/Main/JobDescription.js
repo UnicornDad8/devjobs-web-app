@@ -1,16 +1,18 @@
-import Button from "../UI/Button";
-import JobInfos from "./JobInfos";
+import Button from '../UI/Button';
+import JobInfos from './JobInfos';
+
+import styles from './JobDescription.module.css';
 
 const JobDescription = (props) => {
   return (
-    <section>
-      <div>
+    <section className={styles.jobDescription}>
+      <div className={styles.jobDescriptionDetails}>
         <div>
           <JobInfos postedAt={props.postedAt} contract={props.contract} />
-          <h1>{props.position}</h1>
+          <h1 className={styles.jobDescriptionPosition}>{props.position}</h1>
           <h4>{props.location}</h4>
         </div>
-        <a href={props.apply} target="_blank" rel="noreferrer">
+        <a href={props.apply} target='_blank' rel='noreferrer'>
           <Button primary>Apply now</Button>
         </a>
       </div>
@@ -23,7 +25,7 @@ const JobDescription = (props) => {
         <ul>
           {props.requirements.items.map((item, index) => (
             <li key={index}>
-              <span></span>
+              <span className={styles.jobItemsDots}></span>
               {item}
             </li>
           ))}
@@ -35,7 +37,7 @@ const JobDescription = (props) => {
         <ol>
           {props.role.items.map((item, index) => (
             <li key={index}>
-              <span>{index + 1}</span>
+              <span className={styles.jobItemsNumbers}>{index + 1}</span>
               {item}
             </li>
           ))}
