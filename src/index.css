@@ -159,6 +159,32 @@ a {
   text-decoration: none;
 }
 
+.show-only-on-mobile {
+  display: none;
+}
+
+@media (max-width: 75em) {
+  :root {
+    --padding-layout: 0 5%;
+    --padding-search-bar-items: 2rem;
+  }
+}
+
+@media (max-width: 48.12em) {
+  :root {
+    --padding-search-bar-items: 2.2rem;
+    --border-radius-xl: 0;
+  }
+
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .show-only-on-mobile {
+    display: block;
+  }
+}
+
 /* ------- Toggle Button ------- */
 .toggle-button::before {
   content: "";

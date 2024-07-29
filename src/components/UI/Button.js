@@ -7,6 +7,9 @@ const Button = (props) => {
         backgroundColor: props.noBackground ? "transparent" : "",
         marginTop: props.marginTop ? "6rem" : "",
       }}
+      className={`"" ${props.primary ? "" : ""} ${
+        props.hideOnMobile ? "hide-on-mobile" : ""
+      } ${props.showOnlyOnMobile ? "show-only-on-mobile" : ""}`}
     >
       {props.children}
     </button>
