@@ -107,6 +107,10 @@ header {
   padding: var(--padding-layout);
 }
 
+main {
+  padding: var(--padding-layout);
+}
+
 h1,
 h2,
 h3 {
